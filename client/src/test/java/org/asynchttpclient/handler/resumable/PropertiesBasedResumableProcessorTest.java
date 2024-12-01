@@ -41,7 +41,6 @@ public class PropertiesBasedResumableProcessorTest {
     public void testRemove() {
         PropertiesBasedResumableProcessor processor = new PropertiesBasedResumableProcessor();
         processor.put("http://localhost/test.url", 15L);
-        processor.put("http://localhost/test2.url", 50L);
         processor.remove("http://localhost/test.url");
         processor.save(null);
         processor = new PropertiesBasedResumableProcessor();

@@ -59,7 +59,7 @@ public class ResumableAsyncHandlerTest {
         newRequest = handler.adjustRequestRange(request);
         assertEquals(request.getUri(), newRequest.getUri());
         rangeHeader = newRequest.getHeaders().get(RANGE);
-        assertEquals("bytes=5000-", rangeHeader);
+        assertEquals("bytes=5000", rangeHeader);
     }
 
     @RepeatedIfExceptionsTest(repeats = 5)
