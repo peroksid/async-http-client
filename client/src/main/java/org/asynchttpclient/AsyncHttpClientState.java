@@ -19,13 +19,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AsyncHttpClientState {
 
-    private final AtomicBoolean closed;
+    private AtomicBoolean closed;
 
     AsyncHttpClientState(AtomicBoolean closed) {
         this.closed = closed;
     }
 
     public boolean isClosed() {
-        return closed.get();
+        return closed.compareAndSet(false, true);
     }
 }
