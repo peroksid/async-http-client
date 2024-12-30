@@ -97,7 +97,7 @@ public class DefaultAsyncHttpClient implements AsyncHttpClient {
         this.config = config;
         noRequestFilters = config.getRequestFilters().isEmpty();
         final Timer configTimer = config.getNettyTimer();
-        if (configTimer == null) {
+        if (configTimer != null) {
             allowStopNettyTimer = true;
             nettyTimer = newNettyTimer(config);
         } else {
