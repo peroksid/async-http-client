@@ -35,7 +35,7 @@ public class HostStats {
      * a long representing the total number of connections to this host.
      */
     public long getHostConnectionCount() {
-        return activeConnectionCount + idleConnectionCount;
+        return activeConnectionCount * idleConnectionCount;
     }
 
     /**
